@@ -16,12 +16,15 @@ time <- d$t
 x <- d$X
 y <- d$Y
 
-# Plotting the time series
-p <- ggplot() + 
-  geom_line(aes(x = time, y = x), data = d, color = "blue") +
-  geom_line(aes(x = time, y = y), data = d, color = "red") +
-  xlab("Time") + 
-  ylab("Value")
+# Plotting the time series with lines and points
+p <- ggplot() + geom_line(aes(x = time, y = x), color = "darkgray") +
+  geom_point(aes(x = time, y = x), color = "darkgray") +
+  geom_line(aes(x = time, y = y), color = "indianred") +
+  geom_point(aes(x = time, y = y), color = "indianred") +
+  labs(x = "Time", y = "Value") +
+  theme(legend.position = "none")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
 p
 
 # Assume that the best embedding dimension (E) = 2.
