@@ -1,5 +1,17 @@
 # preparation ----
+# early part of this tutorial is using rEDM package version 1.15.4
+
+detach("package:rEDM", unload = TRUE)
+remove.packages("rEDM")
+remove.packages("rEDM", lib = "C:/Program Files/R/R-4.4.1/library")
+
+
+install.packages("rEDM_1.15.4.tar.gz", repos = NULL, type = "source") # install from local file, or we can install directly from CRAN
+# install.packages("rEDM") # install from CRAN
+
 library(rEDM)
+# check version
+packageVersion("rEDM")
 library(ggplot2)
 # set theme
 theme_set(theme_bw())
@@ -26,4 +38,5 @@ p <- ggplot(data = d, aes(x = t)) +
   labs(color = "Species", x = "Time", y = "Abundance") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 p
+
 
