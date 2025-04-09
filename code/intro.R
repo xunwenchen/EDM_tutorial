@@ -1,4 +1,4 @@
-# Robert May's logistic map: x(t+1) = a * x(t) * (1 - x(t))
+# Robert May's logistic map: x(t+1) = a * x(t) * (1 - x(t)) #######
 # Define the parameters
 a <- 3.5 # Growth rate
 x <- seq(0, 1, length.out = 100)  # Sequence of population values (0 to 1)
